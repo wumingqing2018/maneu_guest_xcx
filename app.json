@@ -5,7 +5,8 @@
     "pages/orderDetail/orderDetail",
     "pages/orderList/orderList",
     "pages/reportDetail/reportDetail",
-    "pages/reportList/reportList"
+    "pages/reportList/reportList",
+    "pages/userPage/userPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,6 +14,19 @@
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "index",
+      "iconPath": "/png/home.png",
+      "selectedIconPath": "/png/home-two.png"
+    },{
+      "pagePath": "pages/userPage/userPage",
+      "text": "user",
+      "iconPath": "/png/user.png",
+      "selectedIconPath": "/png/user-two.png"
+    }]
   },
   "lazyCodeLoading": "requiredComponents"
 }
