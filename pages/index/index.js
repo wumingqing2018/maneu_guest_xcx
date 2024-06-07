@@ -52,9 +52,10 @@ Page({
     });
   },
 
-  getDetail(){
+  getDetail(options) {
+    var link= options.currentTarget.dataset.hi
     wx.navigateTo({
-      url: '../indexDetail/indexDetail',
+      url: '../indexDetail/indexDetail?link='+link
     })
   }
 })

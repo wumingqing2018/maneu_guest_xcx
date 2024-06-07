@@ -1,2 +1,5 @@
 <!--pages/userPage/userPage.wxml-->
-<text>pages/userPage/userPage.wxml</text>
+<text>sologen</text>
+<view class="s_view">
+  <button>登陆按钮</button>
+  </view>

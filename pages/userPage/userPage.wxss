@@ -1,1 +1,6 @@
 /* pages/userPage/userPage.wxss */
+.s_view {
+  margin-left: 5%;
+  width: 30%;
+  text-align: center;
+}
