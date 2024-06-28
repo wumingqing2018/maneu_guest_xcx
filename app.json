@@ -1,16 +1,16 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/indexDetail/indexDetail",
-    "pages/orderDetail/orderDetail",
+    "pages/indexList/indexList",
+    "pages/order/order",
     "pages/orderList/orderList",
-    "pages/reportDetail/reportDetail",
+    "pages/report/report",
     "pages/reportList/reportList",
+    "pages/service/service",
+    "pages/serviceList/serviceList",
     "pages/userPage/userPage",
     "pages/userLogin/userLogin",
-    "pages/userVerify/userVerify",
-    "pages/serviceList/serviceList"
-
+    "pages/userVerify/userVerify"
     ],
   "window": {
     "backgroundTextStyle": "light",

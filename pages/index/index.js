@@ -72,7 +72,7 @@ Page({
   getDetail(e) {
     var link= e.currentTarget.dataset.hi
     wx.navigateTo({
-      url: '../indexDetail/indexDetail?link='+link
+      url: '../indexList/indexList?link='+link
     })
   }
 })

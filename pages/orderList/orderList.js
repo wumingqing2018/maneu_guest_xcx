@@ -88,7 +88,7 @@ Page({
   getOrder(e) {
     let code = e.target.dataset.bar_code
     wx.navigateTo({
-      url: '../orderDetail/orderDetail?code=' + code
+      url: '../order/order?code=' + code
     })
   },
 });
