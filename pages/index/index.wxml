@@ -8,18 +8,11 @@
 <view class="s_view banner-text">
   <text class="h5">徕可丨专注视觉 Focus on vision</text>
 </view>
-<view class="s_view">
-  <image src="https://maneu.online/static/img/4.gif" class="m_show" mode="widthFix" bind:tap="getDetail"></image>
+<view wx:for="{{imageLink}}" wx:key="index">
+  <view class="s_view">
+    <image src="{{item.index}}" class="m_show" mode="widthFix" data-hi="{{item.data}}" bind:tap="getDetail" lazy-load="{{ true }}" show-menu-by-longpress="{{ false }}"></image>
+  </view>
 </view>
 <view class="s_view">
-  <image src="https://maneu.online/static/img/1njj.jpg" class="m_show" mode="widthFix" data-hi="https://maneu.online/static/img/2njj.jpg" bind:tap="getDetail"></image>
-</view>
-<view class="s_view">
-  <image src="https://maneu.online/static/img/1yqs.jpg" class="m_show" mode="widthFix" data-hi="https://maneu.online/static/img/2yqs.jpg" bind:tap="getDetail"></image>
-</view>
-<view class="s_view">
-  <image src="https://maneu.online/static/img/1xzy.jpg" class="m_show" mode="widthFix" data-hi="https://maneu.online/static/img/2xzy.jpg"bind:tap="getDetail"></image>
-</view>
-<view class="s_view">
-  <text>————这是我的底线————</text>
+  <text style="color: white;">————这是我的底线————</text>
 </view>

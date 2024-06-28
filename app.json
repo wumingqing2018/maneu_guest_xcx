@@ -6,7 +6,11 @@
     "pages/orderList/orderList",
     "pages/reportDetail/reportDetail",
     "pages/reportList/reportList",
-    "pages/userPage/userPage"
+    "pages/userPage/userPage",
+    "pages/userLogin/userLogin",
+    "pages/userVerify/userVerify",
+    "pages/serviceList/serviceList"
+
     ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,6 +1,20 @@
 /* pages/userPage/userPage.wxss */
 .s_view {
-  margin-left: 5%;
-  width: 30%;
-  text-align: center;
+  margin: 5%;
+  width: 90%;
+  text-align: left;
+}
+.banner-text {
+  background-color: #f6f4f4; 
+  border-radius: 10px; 
+  margin-bottom: 1%;
+  height: 40px;
+  line-height: 40px;
+}
+.m_show {
+  width: 100%;
+  border-radius: 30rpx;
+}
+button {
+  text-align: left;
 }

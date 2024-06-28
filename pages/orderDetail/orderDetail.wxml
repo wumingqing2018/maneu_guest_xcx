@@ -160,5 +160,5 @@
   </view>
 </view>
 <view style="text-align: center; margin-top: 5%;">
-  <text>————这是我的底线————</text>
+  <text style="color: white;">————这是我的底线————</text>
 </view>

@@ -11,7 +11,7 @@ App({
       userInfo: null
     }
   },
-  wxLogin(){
+  wxLogin() {
     wx.login({
       success(res) {
         if (res.code) {

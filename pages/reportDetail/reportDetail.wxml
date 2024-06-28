@@ -156,5 +156,5 @@
   <ec-canvas id="echarts" canvas-id="echarts" ec="{{ec2}}"></ec-canvas>
 </view> -->
 <view style="text-align: center;">
-  <text>————这是我的底线————</text>
+  <text style="color: white;">————这是我的底线————</text>
 </view>

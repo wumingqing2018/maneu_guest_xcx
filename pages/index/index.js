@@ -9,7 +9,24 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    imageLink: [{
+        index: 'https://maneu.online/static/img/3.gif',
+        data: 'https://maneu.online/static/img/3.gif',
+      },{
+        index: 'https://maneu.online/static/img/1mcjs.jpg',
+        data: 'https://maneu.online/static/img/2mcjs.jpg',
+      },{
+        index: 'https://maneu.online/static/img/1xzy.jpg',
+        data: 'https://maneu.online/static/img/2xzy.jpg',
+      },{
+        index: 'https://maneu.online/static/img/1yqs.jpg',
+        data: 'https://maneu.online/static/img/2yqs.jpg',
+      },{
+        index: 'https://maneu.online/static/img/1njj.jpg',
+        data: 'https://maneu.online/static/img/2njj.jpg',
+      }
+    ]
   },
   // 事件处理函数
   onLoad() {
@@ -52,8 +69,8 @@ Page({
     });
   },
 
-  getDetail(options) {
-    var link= options.currentTarget.dataset.hi
+  getDetail(e) {
+    var link= e.currentTarget.dataset.hi
     wx.navigateTo({
       url: '../indexDetail/indexDetail?link='+link
     })

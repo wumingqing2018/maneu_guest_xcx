@@ -2,5 +2,5 @@
 
 <image src="{{imgscr}}" class="m_show" mode="widthFix"></image>
 <view class="s_view">
-  <text>————这是我的底线————</text>
+  <text style="color: white;">————这是我的底线————</text>
 </view>

@@ -1,4 +1,3 @@
-
 // pages/orderList/orderList.js
 Page({
   /**
@@ -11,8 +10,30 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad: function (e) {
+    let that = this
+    wx.getStorage({
+      key: 'ssk',
+      success(res) {
+        wx.request({
+          url: 'https://maneu.online/getOrderList/',
+          method: 'GET',
+          data: {
+            'code': res.data.id
+          },
+          success: (res) => {
+            that.setData({
+              contentList: res.data.content
+            })
+          }
+        })
+      },
+      fail(res) {
+        wx.redirectTo({
+          url: '../userLogin/userLogin'
+        });
+      }
+    })
   },
 
   /**
@@ -70,18 +91,4 @@ Page({
       url: '../orderDetail/orderDetail?code=' + code
     })
   },
-
-  getPhoneNumber(e) {
-    wx.request({
-      url: 'https://maneu.online/getOrderList/',
-      method: 'GET',
-      data: { 'code': e.detail.code },
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          contentList: res.data
-        })
-      }
-    })
-  }
 });
