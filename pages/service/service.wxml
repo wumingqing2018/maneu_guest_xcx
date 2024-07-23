@@ -1,0 +1,29 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view style="background-color: #003153; height: 40px; padding-left: 5%;">
+  <text style="font-size: 20px; color: #FFC048;">售后详情</text>
+</view>
+<view class="table">
+  <view class="tr">
+    <view class="td0" style="margin-top: 5%;">
+      <text class="text0">售后时间</text>
+    </view>
+  </view>
+  <view class="tr">
+    <view class="td0" style="margin-top: 5%;">
+      <text class="text0">{{time}}</text>
+    </view>
+  </view>
+  <view class="tr">
+    <view class="td0" style="margin-top: 5%;">
+      <text class="text0">售后内容</text>
+    </view>
+  </view>
+  <view class="tr">
+    <view class="td0" style="margin-top: 5%;">
+      <text class="text0">{{content}}</text>
+    </view>
+  </view>
+</view>
+<view style="text-align: center; margin-top: 5%;">
+  <text style="color: white;">————这是我的底线————</text>
+</view>
