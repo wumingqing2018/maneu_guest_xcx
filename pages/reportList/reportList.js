@@ -17,10 +17,11 @@ Page({
       key: 'ssk',
       success(res) {
         wx.request({
-          url: 'https://maneu.online/getReportList/',
+          url: 'https://maneu.online/get_list/',
           method: 'GET',
           data: {
-            'code': res.data.id
+            'code': res.data.id,
+            'text': 'Refraction'
           },
           success: (res) => {
             that.setData({
@@ -74,13 +75,13 @@ Page({
 
   getPhoneNumber(e) {
     wx.request({
-      url: 'https://maneu.online/getReportList/',
+      url: 'https://maneu.online/get_detail/',
       method: 'GET',
       data: {
+        'text': 'Refraction',
         'code': e.detail.code
       },
       success: (res) => {
-        console.log(res)
         this.setData({
           contentList: res.data
         })

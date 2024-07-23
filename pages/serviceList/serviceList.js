@@ -16,15 +16,16 @@ Page({
       key: 'ssk',
       success(res) {
         wx.request({
-          url: 'https://maneu.online/getServiceList/',
+          url: 'https://maneu.online/get_list/',
           method: 'GET',
           data: {
-            'code': res.data.id
+            'code': res.data.id,
+            'text': 'Service'
           },
           success: (res) => {
-            console.log(res)
+            console.log(res.data)
             that.setData({
-              contentList: res.data
+              contentList: res.data.content
             })
           }
         })
@@ -84,5 +85,12 @@ Page({
    */
   onShareAppMessage: function () {
     
-  }
+  },
+
+  getReport(e) {
+    let code = e.target.dataset.bar_code
+    wx.navigateTo({
+      url: '../service/service?code=' + code
+    })
+  },
 })

@@ -5,6 +5,16 @@
 <view class="table">
   <view class="tr">
     <view class="td0" style="margin-top: 5%;">
+      <text class="text0">购买日期 Order Time</text>
+    </view>
+  </view>
+  <view class="tr">
+    <view class="td0" style="border: 0px;">
+      <text class="text0">{{time}}</text>
+    </view>
+  </view>
+  <view class="tr">
+    <view class="td0" style="margin-top: 5%;">
       <text class="text0">视力解决方案 Vision Solutions</text>
     </view>
   </view>
@@ -120,7 +130,7 @@
       <text>使用需求</text>
     </view>
     <view class="td2">
-      <text>{{function}}</text>
+      <text>{{store_function}}</text>
     </view>
   </view>
   <view class="tr">
@@ -140,6 +150,7 @@
   </view>
   <view class="tr" wx:for="{{store_content}}" wx:key="index">
     <view class="td0" style="border: 0px;">
+      <text>{{index}}</text>
       <text class="text0">{{item.arg0}}, {{item.arg1}}, {{item.arg2}}, {{item.arg3}}, {{item.arg4}}</text>
     </view>
   </view>

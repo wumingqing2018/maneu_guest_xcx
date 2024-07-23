@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    "time": "",
     "OD_ADD": "",
     "OD_AX": "",
     "OD_BCVA": "",
@@ -21,10 +22,12 @@ Page({
     "OS_SPH": "",
     "OS_VA": "",
     "PD": "",
-    "function": "",
+    "store_function": "",
     "remark": "",
-    "store_remark": "",
-    "store_content": [],
+    "vision_remark": "",
+    "vision_content": [],
+    "store": [],
+    "time": ""
   },
 
   /**
@@ -32,36 +35,38 @@ Page({
    */
   onLoad(options) {
     wx.request({
-      url: 'https://maneu.online/getOrderDetail/',
+      url: 'https://maneu.online/get_detail/',
       method: 'GET',
       data: {
+        'text': 'Order',
         'code': options.code
       },
       success: (res) => {
+        console.log(res.data)
         this.setData({
-          OD_ADD: res.data[2].OD_ADD,
-          OD_SPH: res.data[2].OD_SPH,
-          OD_AX: res.data[2].OD_AX,
-          OD_BCVA: res.data[2].OD_BCVA,
-          OD_CYL: res.data[2].OD_CYL,
-          OD_FR: res.data[2].OD_FR,
-          OD_PR: res.data[2].OD_PR,
-          OD_SPH: res.data[2].OD_SPH,
-          OD_VA: res.data[2].OD_VA,
-          OS_ADD: res.data[2].OS_ADD,
-          OS_SPH: res.data[2].OS_SPH,
-          OS_AX: res.data[2].OS_AX,
-          OS_BCVA: res.data[2].OS_BCVA,
-          OS_CYL: res.data[2].OS_CYL,
-          OS_FR: res.data[2].OS_FR,
-          OS_PR: res.data[2].OS_PR,
-          OS_SPH: res.data[2].OS_SPH,
-          OS_VA: res.data[2].OS_VA,
-          PD: res.data[2].PD,
-          function: res.data[2].function,
-          remark: res.data[2].remark,
-          store_remark: res.data[0],
-          store_content: res.data[1],
+          OD_ADD: res.data.vision.OD_ADD,
+          OD_SPH: res.data.vision.OD_SPH,
+          OD_AX: res.data.vision.OD_AX,
+          OD_BCVA: res.data.vision.OD_BCVA,
+          OD_CYL: res.data.vision.OD_CYL,
+          OD_FR: res.data.vision.OD_FR,
+          OD_PR: res.data.vision.OD_PR,
+          OD_SPH: res.data.vision.OD_SPH,
+          OD_VA: res.data.vision.OD_VA,
+          OS_ADD: res.data.vision.OS_ADD,
+          OS_SPH: res.data.vision.OS_SPH,
+          OS_AX: res.data.vision.OS_AX,
+          OS_BCVA: res.data.vision.OS_BCVA,
+          OS_CYL: res.data.vision.OS_CYL,
+          OS_FR: res.data.vision.OS_FR,
+          OS_PR: res.data.vision.OS_PR,
+          OS_SPH: res.data.vision.OS_SPH,
+          OS_VA: res.data.vision.OS_VA,
+          PD: res.data.vision.PD,
+          store_function: res.data.vision.function,
+          remark: res.data.vision.remark,
+          store: res.data.store,
+          time: res.data.time
         })
       },
     })

@@ -16,10 +16,11 @@ Page({
       key: 'ssk',
       success(res) {
         wx.request({
-          url: 'https://maneu.online/getOrderList/',
+          url: 'https://maneu.online/get_list/',
           method: 'GET',
           data: {
-            'code': res.data.id
+            'code': res.data.id,
+            'text': 'Order'
           },
           success: (res) => {
             that.setData({

@@ -12,37 +12,41 @@ Page({
    */
   onLoad(options) {
     wx.request({
-      url: 'https://maneu.online/getReportDetail/',
+      url: 'https://maneu.online/get_detail/',
       method: 'GET',
-      data: { 'code': options.code },
+      data: {
+        'text': 'Refraction',
+        'code': options.code
+      },
       success: (res) => {
+        let content = res.data.content
         this.setData({
-          OD_LT: res.data.OD_LT,
-          OD_AD: res.data.OD_AD,
-          OD_ADD: res.data.OD_ADD,
-          OD_AK: res.data.OD_AK,
-          OD_AL: res.data.OD_AL,
-          OD_AX: res.data.OD_AX,
-          OD_BCVA: res.data.OD_BCVA,
-          OD_CCT: res.data.OD_CCT,
-          OD_CYL: res.data.OD_CYL,
-          OD_LT: res.data.OD_LT,
-          OD_SPH: res.data.OD_SPH,
-          OD_VA: res.data.OD_VA,
-          OD_VT: res.data.OD_VT,
-          OS_AD: res.data.OS_AD,
-          OS_ADD: res.data.OS_ADD,
-          OS_AK: res.data.OS_AK,
-          OS_AL: res.data.OS_AL,
-          OS_AX: res.data.OS_AX,
-          OS_BCVA: res.data.OS_BCVA,
-          OS_CCT: res.data.OS_CCT,
-          OS_CYL: res.data.OS_CYL,
-          OS_LT: res.data.OS_LT,
-          OS_SPH: res.data.OS_SPH,
-          OS_VA: res.data.OS_VA,
-          OS_VT: res.data.OS_VT,
-          remark: res.data.remark
+          OD_LT: content.OD_LT,
+          OD_AD: content.OD_AD,
+          OD_ADD: content.OD_ADD,
+          OD_AK: content.OD_AK,
+          OD_AL: content.OD_AL,
+          OD_AX: content.OD_AX,
+          OD_BCVA: content.OD_BCVA,
+          OD_CCT: content.OD_CCT,
+          OD_CYL: content.OD_CYL,
+          OD_LT: content.OD_LT,
+          OD_SPH: content.OD_SPH,
+          OD_VA: content.OD_VA,
+          OD_VT: content.OD_VT,
+          OS_AD: content.OS_AD,
+          OS_ADD: content.OS_ADD,
+          OS_AK: content.OS_AK,
+          OS_AL: content.OS_AL,
+          OS_AX: content.OS_AX,
+          OS_BCVA: content.OS_BCVA,
+          OS_CCT: content.OS_CCT,
+          OS_CYL: content.OS_CYL,
+          OS_LT: content.OS_LT,
+          OS_SPH: content.OS_SPH,
+          OS_VA: content.OS_VA,
+          OS_VT: content.OS_VT,
+          remark: content.remark
         })
       }
     })
