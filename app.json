@@ -23,14 +23,14 @@
     "list": [{
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "/png/home.png",
-        "selectedIconPath": "/png/home-two.png"
+        "iconPath": "/png/home1.png",
+        "selectedIconPath": "/png/home2.png"
       },
       {
         "pagePath": "pages/userPage/userPage",
         "text": "我的",
-        "iconPath": "/png/user.png",
-        "selectedIconPath": "/png/user-two.png"
+        "iconPath": "/png/user1.png",
+        "selectedIconPath": "/png/user2.png"
       }
     ]
   },
