@@ -90,7 +90,7 @@ Page({
   getReport(e) {
     let code = e.target.dataset.bar_code
     wx.navigateTo({
-      url: '../service/service?code=' + code
+      url: '../after-sales/after-sales?code=' + code
     })
   },
 })
