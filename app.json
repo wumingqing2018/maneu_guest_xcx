@@ -1,13 +1,13 @@
 {
   "pages": [
+    "pages/after-sales/after-sales",
+    "pages/after-salesList/after-salesList",
     "pages/index/index",
     "pages/indexList/indexList",
     "pages/order/order",
     "pages/orderList/orderList",
     "pages/report/report",
     "pages/reportList/reportList",
-    "pages/after-sales/after-sales",
-    "pages/serviceList/serviceList",
     "pages/userPage/userPage",
     "pages/userLogin/userLogin",
     "pages/userVerify/userVerify"
