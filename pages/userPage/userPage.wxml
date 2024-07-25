@@ -1,5 +1,5 @@
 <!--pages/userPage/userPage.wxml-->
-<image src="/png/banner.jpg" class="m_show" mode="widthFix"></image>
+<image src="/image/banner.jpg" class="m_show" mode="widthFix"></image>
 <view wx:if="{{islogin == true}}">
   <view class="s_view banner-text">
     <button bind:tap="getOrederList">购买记录</button>
