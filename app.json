@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/after-sales/after-sales",
-    "pages/after-salesList/after-salesList",
     "pages/index/index",
     "pages/indexList/indexList",
+    "pages/after-sales/after-sales",
+    "pages/after-salesList/after-salesList",
     "pages/order/order",
     "pages/orderList/orderList",
     "pages/report/report",
