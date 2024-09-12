@@ -11,7 +11,7 @@
     "pages/userPage/userPage",
     "pages/userLogin/userLogin",
     "pages/userVerify/userVerify"
-    ],
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#003153",
@@ -20,7 +20,8 @@
     "enablePullDownRefresh": false
   },
   "tabBar": {
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "/image/home1.png",

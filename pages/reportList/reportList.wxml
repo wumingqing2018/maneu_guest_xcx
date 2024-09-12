@@ -6,13 +6,13 @@
   <view wx:for="{{contentList}}" wx:key="index">
     <view class="tr">
       <view class="td0 banner-text">
-        <button style="width: auto; color: #003153;" bindtap="getReport" data-bar_code="{{item.id}}">{{item.time}}</button>
+        <button style="width: auto; color: #003153;" bindtap="get_detail" data-bar_code="{{item.id}}">{{item.time}}</button>
       </view>
     </view>
   </view>
   <view class="tr">
     <view class="td0 banner-text">
-      <button style="width: auto; color: #003153;" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">刷新</button>
+      <button style="width: auto; color: #003153;" bindtap="get_list">刷新</button>
     </view>
   </view>
 </view>

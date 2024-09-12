@@ -1,10 +1,11 @@
 <view class="container">
   <form catchsubmit="getVerifyCode" catchreset="formReset">
+    <image src="/image/banner.jpg" mode="widthFix"></image>
     <view class="page-section">
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__bd" style="margin: 30rpx 0">
-            <input class="weui-input" name="input" placeholder="请输入手机号" />
+          <view class="weui-cell__bd" style="margin: 50rpx 0">
+            <input class="weui-input" name="input" placeholder="请输入手机号"/>
           </view>
         </view>
       </view>

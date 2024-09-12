@@ -3,38 +3,13 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    let that = this
-    wx.getStorage({
-      key: 'ssk',
-      success(res) {
-        wx.request({
-          url: 'https://maneu.online/get_list/',
-          method: 'GET',
-          data: {
-            'code': res.data.id,
-            'text': 'Order'
-          },
-          success: (res) => {
-            that.setData({
-              contentList: res.data.content
-            })
-          }
-        })
-      },
-      fail(res) {
-        wx.redirectTo({
-          url: '../userLogin/userLogin'
-        });
-      }
-    })
+    this.get_list()
   },
 
   /**
@@ -86,10 +61,46 @@ Page({
 
   },
 
-  getOrder(e) {
+  get_detail(e) {
     let code = e.target.dataset.bar_code
     wx.navigateTo({
-      url: '../order/order?code=' + code
+      url: '../after-sales/after-sales?code=' + code
+    })
+  },
+
+  get_list(e) {
+    let that = this
+    wx.getStorage({
+      key: 'ssk',
+      success(res) {
+        if (res.data) {
+          wx.request({
+            url: 'https://maneu.online/get_list/',
+            method: 'GET',
+            data: {
+              'code': res.data.id,
+              'text': 'Service'
+            },
+            success: (res) => {
+              that.setData({
+                contentList: res.data.content
+              })
+            }
+          })
+        } else {
+          wx.removeStorage({
+            key: 'ssk',
+          })
+          wx.redirectTo({
+            url: '../userLogin/userLogin'
+          });
+        }
+      },
+      fail(res) {
+        wx.redirectTo({
+          url: '../userLogin/userLogin'
+        });
+      }
     })
   },
 });

@@ -1,20 +1,19 @@
 <!--pages/orderList/orderList.wxml-->
 <view style="background-color: #003153; height: 40px; padding-left: 5%;">
-  <text style="font-size: 20px; color: #FFC048;">订单列表</text>
+  <text style="font-size: 20px; color: #FFC048;">售后记录列表</text>
 </view>
 <view class="table">
 <view wx:for="{{contentList}}" wx:key="index">
   <view class="tr">
     <view class="td0 banner-text">
-      <button style="width: auto; color: #003153;" bindtap="getOrder" data-bar_code="{{item.id}}">
-        查看{{item.time}}的订单
+      <button style="width: auto; color: #003153;" bindtap="get_detail" data-bar_code="{{item.id}}">查看{{item.time}}的记录
       </button>
     </view>
   </view>
 </view>
   <view class="tr">
     <view class="td0 banner-text">
-      <button style="width: auto; color: #003153;" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取记录</button>
+      <button style="width: auto; color: #003153;" bindtap="get_list">刷新</button>
     </view>
   </view>
 </view>

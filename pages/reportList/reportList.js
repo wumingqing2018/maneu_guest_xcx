@@ -12,30 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    let that = this
-    wx.getStorage({
-      key: 'ssk',
-      success(res) {
-        wx.request({
-          url: 'https://maneu.online/get_list/',
-          method: 'GET',
-          data: {
-            'code': res.data.id,
-            'text': 'Refraction'
-          },
-          success: (res) => {
-            that.setData({
-              contentList: res.data.content,
-            })
-          }
-        })
-      },
-      fail(res) {
-        wx.redirectTo({
-          url: '../userLogin/userLogin'
-        });
-      }
-    })
+    this.get_list()
   },
 
   /**
@@ -73,23 +50,43 @@ Page({
    */
   onShareAppMessage() {},
 
-  getPhoneNumber(e) {
-    wx.request({
-      url: 'https://maneu.online/get_detail/',
-      method: 'GET',
-      data: {
-        'text': 'Refraction',
-        'code': e.detail.code
+  get_list(e) {
+    let that = this
+    wx.getStorage({
+      key: 'ssk',
+      success(res) {
+        if (res.data) {
+          wx.request({
+            url: 'https://maneu.online/get_list/',
+            method: 'GET',
+            data: {
+              'code': res.data.id,
+              'text': 'Refraction'
+            },
+            success: (res) => {
+              that.setData({
+                contentList: res.data.content
+              })
+            }
+          })
+        } else {
+          wx.removeStorage({
+            key: 'ssk',
+          })
+          wx.redirectTo({
+            url: '../userLogin/userLogin'
+          });
+        }
       },
-      success: (res) => {
-        this.setData({
-          contentList: res.data
-        })
+      fail(res) {
+        wx.redirectTo({
+          url: '../userLogin/userLogin'
+        });
       }
     })
   },
 
-  getReport(e) {
+  get_detail(e) {
     let code = e.target.dataset.bar_code
     wx.navigateTo({
       url: '../report/report?code=' + code
