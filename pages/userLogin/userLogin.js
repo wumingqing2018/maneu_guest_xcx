@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
     /**
@@ -9,7 +10,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function () {
-
+        wx.removeStorage({
+            key: 'ssk',
+        })
     },
 
     /**
@@ -63,19 +66,30 @@ Page({
 
     getVerifyCode(e) {
         var code = e.detail.value.input
-        wx.request({
-            url: 'https://maneu.online/sendsms/',
-            method: 'GET',
-            data: {
-                'code': code
-            },
-            success: (res) => {
-                console.log(res)
-                wx.navigateTo({
-                    url: '../userVerify/userVerify?call=' + code,
-                })
-            }
-        })
+        var parttern = /^1[3-9]\d{9}$/;
+        if (parttern.test(code)) {
+            wx.request({
+                url: 'https://maneu.online/sendsms/',
+                method: 'GET',
+                data: {
+                    'code': code,
+                },
+                success: (res) => {
+                    if (res.data.status == true) {
+                        wx.navigateTo({
+                            url: '../userVerify/userVerify?call=' + code,
+                        })
+                    } else {
+                        app.fail_Remind('获取验证码失败，请在次尝试')
+                    }
+                },
+                fail: (res) => {
+                    app.fail_Remind('网络异常，请在次尝试')
+                }
+            })
+        } else {
+            app.fail_Remind('请输入正确的手机号')
+        }
     },
 
     formReset(e) {

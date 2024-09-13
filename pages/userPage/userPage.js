@@ -102,15 +102,13 @@ Page({
     },
 
     userLogout(e) {
-        wx.clearStorage()
         wx.removeStorage({
             key: 'ssk',
-            islogin: false,
-            name: '',
-            call: '',
-        })
-        wx.switchTab({
-            url: '../index/index',
+            success(res) {
+                wx.reLaunch({
+                    url: '../userPage/userPage',
+                })
+            }
         })
     }
 })

@@ -1,9 +1,13 @@
 // pages/orderList/orderList.js
+const app = getApp()
 Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+        contentList: [],
+        text: "Order"
+    },
 
     /**
      * 生命周期函数--监听页面加载
@@ -72,7 +76,7 @@ Page({
                         method: 'GET',
                         data: {
                             'code': res.data.id,
-                            'text': 'Order'
+                            'text': that.data.text,
                         },
                         success: (res) => {
                             that.setData({
@@ -80,32 +84,20 @@ Page({
                             })
                         },
                         fail(res) {
-                            wx.redirectTo({
-                                url: '../userLogin/userLogin'
-                            });
+                            app.fail_Remind("请求发送短信失败，请确认发送短信次数是否过多")
                         }
                     })
                 } else {
-                    wx.removeStorage({
-                        key: 'ssk',
-                    })
-                    wx.redirectTo({
-                        url: '../userLogin/userLogin'
-                    });
+                    app.fail_alter("网络异常请重新登录")
                 }
             },
             fail(res) {
-                wx.redirectTo({
-                    url: '../userLogin/userLogin'
-                });
+                app.fail_alter("请先登录")
             }
         })
     },
 
     get_detail(e) {
-        let code = e.target.dataset.bar_code
-        wx.navigateTo({
-            url: '../order/order?code=' + code
-        })
+        app.get_detail(e.target.dataset.bar_code)
     },
 });

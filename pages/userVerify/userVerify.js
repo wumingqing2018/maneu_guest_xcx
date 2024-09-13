@@ -1,6 +1,6 @@
 // pages/userVerify/userVerify.js
+const app = getApp()
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -67,39 +67,38 @@ Page({
     },
 
     setCall(e) {
-        wx.request({
-            url: 'https://maneu.online/login/',
-            method: "GET",
-            data: {
-                "call": this.data.call,
-                "code": e.detail.value.input,
-            },
-            success(res) {
-                if (res.data.status == true) {
-                    wx.setStorage({
-                        key: "ssk",
-                        data: res.data.content,
-                        success() {
-                            wx.switchTab({
-                                url: '../userPage/userPage',
-                            })
-                        },
-                    })
-                } else {
-                    wx.showModal({
-                        title: '提示',
-                        content: '验证码错误请输入正确的验证码',
-                        showCancel: false,
-                        confirmText: "好的",
-                        complete: (res) => {
-                            if (res.confirm) {
-
-                            }
-                        }
-                    })
+        var code = e.detail.value.input;
+        var parttern = /^\d{6}$/;
+        if (parttern.test(code)) {
+            wx.request({
+                url: 'https://maneu.online/login/',
+                method: "GET",
+                data: {
+                    "call": this.data.call,
+                    "code": e.detail.value.input,
+                },
+                success(res) {
+                    if (res.data.status == true) {
+                        wx.setStorage({
+                            key: "ssk",
+                            data: res.data.content,
+                            success() {
+                                wx.switchTab({
+                                    url: '../userPage/userPage',
+                                })
+                            },
+                        })
+                    } else {
+                        app.fail_Remind('登录失败，请在次尝试')
+                    }
+                },
+                fail: (res) => {
+                    app.fail_Remind('网络异常，请在次尝试')
                 }
-            }
-        })
+            })
+        } else {
+            app.fail_Remind('请输入正确的验证码')
+        }
     },
 
     formReset(e) {
