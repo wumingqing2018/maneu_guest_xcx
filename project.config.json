@@ -42,9 +42,10 @@
     "tabSize": 2
   },
   "libVersion": "2.25.3",
+  "appid": "wxf48b774de9be5613",
+  "projectname": "maneu_guest_xcx",
   "packOptions": {
     "ignore": [],
     "include": []
-  },
-  "appid": "wxf48b774de9be5613"
+  }
 }

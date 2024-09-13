@@ -66,8 +66,11 @@ Page({
         wx.request({
             url: 'https://maneu.online/sendsms/',
             method: 'GET',
-            data: {'code': code},
+            data: {
+                'code': code
+            },
             success: (res) => {
+                console.log(res)
                 wx.navigateTo({
                     url: '../userVerify/userVerify?call=' + code,
                 })

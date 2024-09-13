@@ -1,7 +1,4 @@
 // index.js
-// 获取应用实例
-const app = getApp()
-
 Page({
     data: {
         motto: 'Hello World',
@@ -25,8 +22,7 @@ Page({
         }, {
             index: 'https://maneu.online/static/img/1njj.jpg',
             data: 'https://maneu.online/static/img/2njj.jpg',
-        }
-        ]
+        }]
     },
     // 事件处理函数
     onLoad() {

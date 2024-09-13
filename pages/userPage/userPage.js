@@ -89,7 +89,6 @@ Page({
         })
     },
 
-
     getServiceList() {
         wx.navigateTo({
             url: '../after-salesList/after-salesList',
@@ -104,13 +103,11 @@ Page({
 
     userLogout(e) {
         wx.clearStorage()
-        this.setData({
+        wx.removeStorage({
+            key: 'ssk',
             islogin: false,
             name: '',
             call: '',
-        })
-        wx.removeStorage({
-          key: 'ssk',
         })
         wx.switchTab({
             url: '../index/index',
