@@ -3,7 +3,8 @@
   "projectname": "maneu_guest_xcx",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": true
+    "urlCheck": false,
+    "skylineRenderEnable": false
   },
   "libVersion": "3.4.6"
 }

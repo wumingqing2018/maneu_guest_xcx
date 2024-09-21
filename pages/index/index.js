@@ -26,6 +26,7 @@ Page({
     },
     // 事件处理函数
     onLoad() {
+      this.getIndexList();
         if (wx.getUserProfile) {
             this.setData({
                 canIUseGetUserProfile: true
@@ -67,6 +68,16 @@ Page({
             imageUrl: '/image/banner.jpg',
             promise
         }
+    },
+
+    getIndexList(){
+      wx.request({
+        url: 'https://maneu.online/get_list/',
+        method: "GET",
+        success(e){
+          console.log('1')
+        }
+      })
     },
 
     getReport() {
