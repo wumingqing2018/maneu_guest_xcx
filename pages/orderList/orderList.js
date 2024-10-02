@@ -6,7 +6,6 @@ Page({
      */
     data: {
         contentList: [],
-        text: "Order"
     },
 
     /**
@@ -47,9 +46,9 @@ Page({
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh() {
-
-    },
+    onPullDownRefresh: function (e) {
+      this.get_list()
+  },
 
     /**
      * 页面上拉触底事件的处理函数
@@ -76,9 +75,10 @@ Page({
                         method: 'GET',
                         data: {
                             'code': res.data.id,
-                            'text': that.data.text,
+                            'text': 'Order',
                         },
                         success: (res) => {
+                          console.log(res.data)
                             that.setData({
                                 contentList: res.data.content
                             })
@@ -98,6 +98,9 @@ Page({
     },
 
     get_detail(e) {
-        app.get_detail(e.target.dataset.bar_code)
+      var code = e.target.dataset.bar_code
+      wx.navigateTo({
+        url: '../order/order?code=' + code
+      })
     },
 });

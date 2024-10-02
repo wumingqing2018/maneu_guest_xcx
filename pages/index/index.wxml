@@ -13,6 +13,3 @@
     <image src="{{item.index}}" class="m_show" mode="widthFix" data-hi="{{item.data}}" bind:tap="getDetail" lazy-load="{{ true }}" show-menu-by-longpress="{{ false }}"></image>
   </view>
 </view>
-<view class="s_view">
-  <text style="color: white;">————这是我的底线————</text>
-</view>

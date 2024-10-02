@@ -34,10 +34,10 @@
       <text>裸眼视力</text>
     </view>
     <view class="td1">
-      <text>{{OD_VA}}</text>
+      <text>{{vision.OD_VA}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_VA}}</text>
+      <text>{{vision.OS_VA}}</text>
     </view>
   </view>
   <view class="tr">
@@ -45,10 +45,10 @@
       <text>球镜</text>
     </view>
     <view class="td1">
-      <text>{{OD_SPH}}</text>
+      <text>{{vision.OD_SPH}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_SPH}}</text>
+      <text>{{vision.OS_SPH}}</text>
     </view>
   </view>
   <view class="tr">
@@ -56,10 +56,10 @@
       <text>柱镜</text>
     </view>
     <view class="td1">
-      <text>{{OD_CYL}}</text>
+      <text>{{vision.OD_CYL}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_CYL}}</text>
+      <text>{{vision.OS_CYL}}</text>
     </view>
   </view>
   <view class="tr">
@@ -67,10 +67,10 @@
       <text>轴位</text>
     </view>
     <view class="td1">
-      <text>{{OD_AX}}</text>
+      <text>{{vision.OD_AX}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_AX}}</text>
+      <text>{{vision.OS_AX}}</text>
     </view>
   </view>
   <view class="tr">
@@ -78,10 +78,10 @@
       <text>棱镜</text>
     </view>
     <view class="td1">
-      <text>{{OD_PR}}</text>
+      <text>{{vision.OD_PR}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_PR}}</text>
+      <text>{{vision.OS_PR}}</text>
     </view>
   </view>
   <view class="tr">
@@ -89,10 +89,10 @@
       <text>基底取向</text>
     </view>
     <view class="td1">
-      <text>{{OD_FR}}</text>
+      <text>{{vision.OD_FR}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_FR}}</text>
+      <text>{{vision.OS_FR}}</text>
     </view>
   </view>
   <view class="tr">
@@ -100,10 +100,10 @@
       <text>下加光</text>
     </view>
     <view class="td1">
-      <text>{{OD_ADD}}</text>
+      <text>{{vision.OD_ADD}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_ADD}}</text>
+      <text>{{vision.OS_ADD}}</text>
     </view>
   </view>
   <view class="tr">
@@ -111,10 +111,10 @@
       <text>矫正视力</text>
     </view>
     <view class="td1">
-      <text>{{OD_BCVA}}</text>
+      <text>{{vision.OD_BCVA}}</text>
     </view>
     <view class="td1">
-      <text>{{OS_BCVA}}</text>
+      <text>{{vision.OS_BCVA}}</text>
     </view>
   </view>
   <view class="tr">
@@ -122,7 +122,7 @@
       <text>瞳距</text>
     </view>
     <view class="td1">
-      <text>{{PD}}</text>
+      <text>{{vision.PD}}</text>
     </view>
   </view>
   <view class="tr">
@@ -130,15 +130,7 @@
       <text>使用需求</text>
     </view>
     <view class="td2">
-      <text>{{store_function}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>验光师建议</text>
-    </view>
-    <view class="td2">
-      <text>{{remark}}</text>
+      <text>{{vision.funtion}}</text>
     </view>
   </view>
 </view>

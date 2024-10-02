@@ -3,32 +3,24 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    "vision": {},
-    "store": [],
-    "time": ""
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    wx.request({
-      url: 'https://maneu.online/get_detail/',
-      method: 'GET',
-      data: {
-        'text': 'Order',
-        'code': options.code
-      },
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          vision: res.data.content.vision,
-          store: res.data.content.store,
-          time: res.data.content.time
-        })
-      },
-    })
+      wx.request({
+          url: 'https://maneu.online/get_detail/',
+          method: 'GET',
+          data: {
+              'text': 'Maintain',
+              'code': options.code
+          },
+          success: (res) => {
+              console.log(res.data)
+              this.setData({})
+          },
+      })
   },
 
   /**

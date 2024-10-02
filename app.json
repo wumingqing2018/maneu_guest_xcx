@@ -2,18 +2,19 @@
   "pages": [
     "pages/index/index",
     "pages/indexList/indexList",
-    "pages/after-sales/after-sales",
-    "pages/after-salesList/after-salesList",
+    "pages/maintain/maintain",
+    "pages/maintainList/maintainList",
     "pages/order/order",
     "pages/orderList/orderList",
     "pages/report/report",
     "pages/reportList/reportList",
     "pages/userPage/userPage",
     "pages/userLogin/userLogin",
-    "pages/userVerify/userVerify"
+    "pages/userVerify/userVerify",
+    "pages/userUpdata/userUpdata"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#003153",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "white",
