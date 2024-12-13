@@ -2,8 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/indexList/indexList",
-    "pages/maintain/maintain",
-    "pages/maintainList/maintainList",
     "pages/order/order",
     "pages/orderList/orderList",
     "pages/report/report",
