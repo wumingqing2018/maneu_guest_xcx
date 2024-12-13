@@ -12,7 +12,7 @@
     "pages/userLogin/userLogin",
     "pages/userVerify/userVerify",
     "pages/userUpdata/userUpdata"
-  ],
+    ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#003153",

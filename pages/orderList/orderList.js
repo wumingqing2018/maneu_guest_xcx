@@ -75,7 +75,7 @@ Page({
                         method: 'GET',
                         data: {
                             'code': res.data.id,
-                            'text': 'Order',
+                            'text': '100001',
                         },
                         success: (res) => {
                           console.log(res.data)

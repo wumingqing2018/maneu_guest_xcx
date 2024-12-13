@@ -2,7 +2,7 @@
 <image src="/image/banner.jpg" class="m_show" mode="widthFix"></image>
 <view wx:if="{{islogin == true}}">
   <view class="s_view banner-text">
-    <button bind:tap="getUserUpdata">更新资料</button>
+    <button>登录账号：{{call}}</button>
   </view>
   <view class="s_view banner-text">
     <button bind:tap="getOrederList">购买记录</button>
@@ -11,7 +11,7 @@
     <button bind:tap="getReportList">验光报告</button>
   </view>
   <view class="s_view banner-text">
-    <button bind:tap="getmaintainList">售后记录</button>
+    <button bind:tap="getMaintainList">售后记录</button>
   </view>
   <view class="s_view banner-text">
     <button bind:tap="userLogout">用户退出</button>

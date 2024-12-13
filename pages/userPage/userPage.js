@@ -89,7 +89,7 @@ Page({
     })
   },
 
-  getServiceList() {
+  getMaintainList() {
     wx.navigateTo({
       url: '../maintainList/maintainList',
     })

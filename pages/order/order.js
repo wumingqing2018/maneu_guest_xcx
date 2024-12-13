@@ -4,31 +4,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "vision": {},
-    "store": [],
-    "time": ""
+    order: {},
+    store: {},
+    report: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    wx.request({
-      url: 'https://maneu.online/get_detail/',
-      method: 'GET',
-      data: {
-        'text': 'Order',
-        'code': options.code
-      },
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          vision: res.data.content.vision,
-          store: res.data.content.store,
-          time: res.data.content.time
-        })
-      },
-    })
+    this.order_content(options.code)
   },
 
   /**
@@ -78,5 +63,66 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+  order_content(id){
+    wx.request({
+      url: 'https://maneu.online/get_detail/',
+      method: 'GET',
+      data: {
+        'text': 'Order',
+        'code': id
+      },
+      success: (res) => {
+        if (res.data.status===true){
+          this.setData({
+            order: res.data.content
+          })
+          this.store_content(res.data.content.store_id)
+          this.report_content(res.data.content.report_id)
+        }else{
+          alert('订单内容获取失败')
+        }
+      },
+    })
+  },
+  store_content(id){
+    wx.request({
+      url: 'https://maneu.online/get_detail/',
+      method: 'GET',
+      data: {
+        'text': 'Store',
+        'code': id
+      },
+      success: (res) => {
+        console.log(res.data)
+        if (res.data.status===true){
+          this.setData({
+            store: res.data.content
+          })
+        }else{
+          alert('产品内容获取失败')
+        }
+      },
+    })
+  },
+  report_content(id){
+    wx.request({
+      url: 'https://maneu.online/get_detail/',
+      method: 'GET',
+      data: {
+        'text': 'Report',
+        'code': id
+      },
+      success: (res) => {
+        console.log(res.data.content)
+        if (res.data.status===true){
+          this.setData({
+            report: res.data.content
+          })
+        }else{
+          alert('报告内容获取失败')
+        }
+      },
+    })
+  },
 })

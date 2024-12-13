@@ -22,6 +22,6 @@
     </view>
   </view>
 </view>
-<view style="text-align: center; margin-top: 5%;">
-  <text style="color: white;">————这是我的底线————</text>
+<view style="text-align: center;">
+  <text style="color: black;">————下拉刷新————</text>
 </view>

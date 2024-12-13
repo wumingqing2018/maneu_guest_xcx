@@ -1,46 +1,60 @@
-/* pages/report/report.wxss */
+/* pages/wxcharts/wxcharts.wxss */
+.canvas {
+  width: 750rpx;
+  height: 400rpx;
+}
+.h5{
+  font-weight: bold;
+  font-size: 35rpx;
+  padding: 2%;
+}
+.h4 {
+  padding: 2%; 
+  border-bottom: 1px solid;
+}
 
-.table {
-  margin: 5%;
-  height: 100%;
+.navBox {
+  /* tab整体样式 */
+  height: 100rpx;
   display: flex;
-  flex-direction: column;     /* 排列形式: 向下 */
+  align-items: center;
+  justify-content: space-around;
 }
 
-.tr {
+.fontColorBox {
+  /* 选中tab样式 */
+  color: black;
+  font-weight: bold;
+}
+
+.titleBox {
+  /* 未选中tab样式 */
+  color: rgb(168, 170, 175);
+  font-size: 28rpx;
   display: flex;
-  flex-direction: row;
-  height: 40px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hr {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-  border: 1px solid #003153;
+.lineBox {
+  /* 线条样式 */
+  width: 32rpx;
+  height: 8rpx;
+  background: black;
+  margin-top: 10rpx;
+  border-radius: 4rpx;
 }
 
-
-.td_30 {  /* 公有的属性 */
-  flex-wrap: wrap;            /* 自动换行 */
-  width: 30%;					/* 4个25%相加刚好100% */
-  text-align: right;         /* 文本居中 */
-  justify-content:center;     /* 主轴居中 */
-  align-items: center;        /* 交叉轴居中 */
-  color: #003153;
+.swiperTtemBox {
+  /* 内容样式 */
+  padding: 16rpx;
+  font-size: 28rpx;
+  height: calc(40vh - 150rpx);
 }
 
-.td_70 {
-  flex-wrap: wrap;            /* 自动换行 */
-  width: 70%;					/* 4个25%相加刚好100% */
-  text-align: left;         /* 文本居中 */
-  justify-content:center;     /* 主轴居中 */
-  align-items: center;        /* 交叉轴居中 */
-  color: #003153;
-  overflow-wrap:break-word;
+.card {
+  background-color: #ffffff; border-radius:20px;
 }
-
-.text0 {
-  margin-left: 2%;
-  margin-right: 4%;
+.card_banner {
+  padding-left: 20px; padding-top: 20px;
 }
