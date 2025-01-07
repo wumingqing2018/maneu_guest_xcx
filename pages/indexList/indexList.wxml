@@ -3,7 +3,7 @@
   <image src="https://maneu.online/static/img/3.gif" class="m_show" mode="widthFix"></image>
   <image src="{{imgscr}}" class="m_show" mode="widthFix"></image>
 </view>
-<view>
+<view wx:else="">
   <image src="{{imgscr}}" class="m_show" mode="widthFix"></image>
 </view>
 <view class="s_view">
