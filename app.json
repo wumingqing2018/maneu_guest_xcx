@@ -7,9 +7,7 @@
     "pages/report/report",
     "pages/reportList/reportList",
     "pages/userPage/userPage",
-    "pages/userLogin/userLogin",
-    "pages/userVerify/userVerify",
-    "pages/userUpdata/userUpdata"
+    "pages/userVerify/userVerify"
     ],
   "window": {
     "backgroundTextStyle": "dark",

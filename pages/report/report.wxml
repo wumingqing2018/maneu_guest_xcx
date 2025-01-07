@@ -13,7 +13,7 @@
     </view>
     <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
       <view style="padding: 2%;">姓名</view>
-      <view style="padding: 2%;">{{ name }}</view>
+      <view style="padding: 2%;">{{ nickname }}</view>
     </view>
     <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
       <view style="padding: 2%; background: #f6f4f4;">电话</view>
@@ -63,7 +63,7 @@
         <view style="padding: 2%; margin: 1px; background: #d6eef8; font-weight: bold;">{{ report.OS.VA }}</view>
       </view>
     </view>
-    <view wx:if="{{ report.OD.SPH != '0' || report.OS.SPH != '0' }}">
+    <view wx:if="{{ report.OD.SPH != '0' || report.OS.SPH != '0.00' }}">
       <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
         <view style="padding: 2%; margin: 1px; background: #d6eef8; font-weight: bold;">
           球镜（DS）
@@ -76,7 +76,7 @@
         </view>
       </view>
     </view>
-    <view wx:if="{{ report.OD.CYL != '0' || report.OS.CYL != '0' }}">
+    <view wx:if="{{ report.OD.CYL != '0' || report.OS.CYL != '0.00' }}">
       <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
         <view style="padding: 2%; margin: 1px; background: #d6eef8; font-weight: bold;">
           柱镜（DC）
@@ -145,10 +145,9 @@
       <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.FR }}</view>
       <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.FR }}</view>
     </view>
-    <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
+    <view style="display: grid; grid-template-columns: 2fr 2fr; text-align: center;">
       <view style="padding: 2%;">瞳距</view>
-      <view style="padding: 2%;">{{ report.OD.PD }}</view>
-      <view style="padding: 2%;">{{ report.OS.PD }}</view>
+      <view style="padding: 2%;">{{ report.PD }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
       <view style="padding: 2%; background: #f6f4f4;">眼轴长度</view>
@@ -172,8 +171,8 @@
     </view>
     <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
       <view style="padding: 2%; background: #f6f4f4;">角膜厚度</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.VT }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.VT }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.CCT }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.CCT }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
       <view style="padding: 2%;">晶体厚度</view>
@@ -181,9 +180,14 @@
       <view style="padding: 2%;">{{ report.OS.LT }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%; background: #f6f4f4;">矫正视力</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.BCVA }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.BCVA }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">玻璃体厚度</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.VT }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.VT }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%;">矫正视力</view>
+      <view style="padding: 2%;">{{ report.OD.BC }}</view>
+      <view style="padding: 2%;">{{ report.OS.BC }}</view>
     </view>
     <view style="padding: 2%;"></view>
   </view>
@@ -225,10 +229,9 @@
       <view style="padding: 2%;">{{ report.OD.PR }}</view>
       <view style="padding: 2%;">{{ report.OS.PR }}</view>
     </view>
-    <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
+    <view style="display: grid; grid-template-columns: 2fr 2fr; text-align: center;">
       <view style="padding: 2%; background: #f6f4f4;">瞳距</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.PD }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.PD }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.PD }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
       <view style="padding: 2%;">下加光</view>
@@ -237,8 +240,8 @@
     </view>
     <view style="display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: center;">
       <view style="padding: 2%; background: #f6f4f4;">矫正视力</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.BCVA }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.BCVA }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.BC }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.BC }}</view>
     </view>
     <view style="padding: 2%;"></view>
   </view>

@@ -1,6 +1,6 @@
 <!--pages/userPage/userPage.wxml-->
-<image src="/image/banner.jpg" class="m_show" mode="widthFix"></image>
 <view wx:if="{{islogin == true}}">
+  <image src="/image/banner.jpg" class="m_show" mode="widthFix"></image>
   <view class="s_view banner-text">
     <button>登录账号：{{call}}</button>
   </view>
@@ -18,7 +18,21 @@
   </view>
 </view>
 <view wx:else="{{islogin == false}}">
-  <view class="s_view banner-text">
-    <button bind:tap="userLogin">用户登陆</button>
+  <view class="container">
+    <form catchsubmit="getVerifyCode" catchreset="formReset">
+      <image src="/image/banner.jpg" mode="widthFix"></image>
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 50rpx 0">
+              <input class="weui-input" name="input" placeholder="请输入手机号" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">获取验证码</button>
+      </view>
+    </form>
   </view>
 </view>

@@ -1,19 +1,46 @@
-// pages/orderDetail/orderDetail.js
+// pages/reportDetail/reportDetail.js
+//定义记录初始屏幕宽度比例，便于初始化
+var windowW = 0;
+// pages/reportList/reportList.js
+var app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    order: {},
-    store: {},
+    admin: {},
+    store: [],
     report: {},
+    name: '',
+    time: '',
+    phone: '',
+    remark: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.order_content(options.code)
+    wx.request({
+      url: 'https://maneu.online/get_detail/',
+      method: 'GET',
+      data: {
+        'text': '100001',
+        'code': options.code
+      },
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          name: res.data.content.name,
+          time: res.data.content.time,
+          phone: res.data.content.phone,
+          remark: res.data.content.remark,
+          store: res.data.content.content,
+        })
+        this.get_admin_content(res.data.content.admin_id)
+        this.get_report_content(res.data.content.report_id)
+      }
+    })
   },
 
   /**
@@ -64,65 +91,49 @@ Page({
   onShareAppMessage() {
 
   },
-  order_content(id){
-    wx.request({
-      url: 'https://maneu.online/get_detail/',
-      method: 'GET',
-      data: {
-        'text': 'Order',
-        'code': id
-      },
-      success: (res) => {
-        if (res.data.status===true){
-          this.setData({
-            order: res.data.content
-          })
-          this.store_content(res.data.content.store_id)
-          this.report_content(res.data.content.report_id)
-        }else{
-          alert('订单内容获取失败')
-        }
-      },
+  slideOn(e) {
+    // 拿到当前索引并动态改变
+    this.setData({
+      tabsId: e.detail.current
     })
   },
-  store_content(id){
-    wx.request({
-      url: 'https://maneu.online/get_detail/',
-      method: 'GET',
-      data: {
-        'text': 'Store',
-        'code': id
-      },
-      success: (res) => {
-        console.log(res.data)
-        if (res.data.status===true){
-          this.setData({
-            store: res.data.content
-          })
-        }else{
-          alert('产品内容获取失败')
-        }
-      },
+
+  //点击tab时触发
+  tabsOn(e) {
+    this.setData({
+      //拿到当前索引并动态改变
+      tabsId: e.currentTarget.dataset.idx
     })
   },
-  report_content(id){
+  get_admin_content(code){
     wx.request({
       url: 'https://maneu.online/get_detail/',
       method: 'GET',
       data: {
-        'text': 'Report',
-        'code': id
+        'text': 100005,
+        'code': code,
       },
       success: (res) => {
-        console.log(res.data.content)
-        if (res.data.status===true){
-          this.setData({
-            report: res.data.content
-          })
-        }else{
-          alert('报告内容获取失败')
-        }
+        console.log('admin',res)
+        this.setData({
+          admin: res.data.content
+        })
+      }
+    })
+  },
+  get_report_content(code){
+    wx.request({
+      url: 'https://maneu.online/get_detail/',
+      method: 'GET',
+      data: {
+        'text': 100003,
+        'code': code,
       },
+      success: (res) => {
+        this.setData({
+          report: res.data.content.content
+        })
+      }
     })
   },
 })

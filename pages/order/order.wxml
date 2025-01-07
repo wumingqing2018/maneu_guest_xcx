@@ -1,205 +1,137 @@
-<!--pages/orderDetail/orderDetail.wxml-->
-<view style="background-color: #003153; height: 40px; padding-left: 5%;">
-  <text style="font-size: 20px; color: #FFC048;">订单详情</text>
-</view>
+<view style="background: whitesmoke; padding: 2%;">
+  <view class="card">
+    <view style="text-align: center;">
+      <text class="h5">{{ time }} 历史订单</text>
+    </view>
+  </view>
+  <view style="padding:2%;"></view>
 
-<!-- 订单信息 -->
-<view class="table">
-  <view class="tr">
-    <view class="td0" style="margin-top: 5%;">
-      <text class="text0">订单信息</text>
+  <view class="card">
+    <view>
+      <view class="h5">基础信息</view>
+      <view class="h4">客户信息</view>
     </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>购买时间</text>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+      <view style="padding: 2%;">姓名</view>
+      <view style="padding: 2%;">{{ nickname }}</view>
     </view>
-    <view class="td2">
-      <text>{{ order.time }}</text>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+      <view style="padding: 2%; background: #f6f4f4;">电话</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ phone }}</view>
     </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>客户姓名</text>
-    </view>
-    <view class="td2">
-      <text>{{ order.name }}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>客户电话</text>
-    </view>
-    <view class="td2">
-      <text>{{ order.phone }}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>订单备注</text>
-    </view>
-    <view class="td2">
-      <text>{{ order.remark }}</text>
-    </view>
-  </view>
-</view>
 
-<!-- 验光报告 -->
-<view class="table">
-  <view class="tr">
-    <view class="td0" style="margin-top: 5%;">
-      <text class="text0">视力解决方案</text>
+    <view>
+      <view class="h4">验光机构</view>
     </view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+      <view style="padding: 2%; background: #f6f4f4;">姓名</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ admin.name }}</view>
+    </view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+      <view style="padding: 2%;">电话</view>
+      <view style="padding: 2%;">{{ admin.phone }}</view>
+    </view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+      <view style="padding: 2%; background: #f6f4f4;">地址</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ admin.location }}</view>
+    </view>
+    
+    <view>
+      <view class="h4">验光师建议</view>
+    </view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr;">
+      <view style="padding: 2%; background: #f6f4f4;">无</view>
+    </view>
+    <view style="padding:2%;"></view>
   </view>
-  <view class="tr">
-    <view class="td1">
-      <text>参数</text>
-    </view>
-    <view class="td1">
-      <text>右眼</text>
-    </view>
-    <view class="td1">
-      <text>左眼</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>裸眼视力</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.VA}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.VA}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>球镜</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.SPH}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.SPH}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>柱镜</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.CYL}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.CYL}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>轴位</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.AX}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.AX}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>棱镜</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.PR}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.PR}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>基底取向</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.FR}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.FR}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>下加光</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.ADD}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.ADD}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>矫正视力</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OD.BCVA}}</text>
-    </view>
-    <view class="td1">
-      <text>{{report.OS.BCVA}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>瞳距</text>
-    </view>
-    <view class="td1">
-      <text>{{report.PD}}</text>
-    </view>
-  </view>
-  <view class="tr">
-    <view class="td1">
-      <text>使用需求</text>
-    </view>
-    <view class="td2">
-      <text>{{report.Function}}</text>
-    </view>
-  </view>
-</view>
+  <view style="padding:2%;"></view>
 
-<!-- 产品信息 -->
-<view class="table">
-  <view class="tr">
-    <view class="td0" style="margin-top: 5%;">
-      <text class="text0">产品订单信息 Product Orders</text>
-    </view>
-  </view>
-  <view class="tr" wx:for="{{store}}" wx:key="index">
-    <view class="td0" style="border: 0px;">
-      <text>{{index}}</text>
-      <text class="text0">{{item.arg0}}, {{item.arg1}}, {{item.arg2}}, {{item.arg3}}, {{item.arg4}}</text>
-    </view>
-  </view>
-</view>
 
-<!-- 注意事项 -->
-<view class="table">
-  <view class="tr">
-    <view class="td0" style="margin-top: 5%;">
-      <text class="text0">注意事项 matters need attention</text>
+  <view class="card">
+    <view>
+      <view class="h5">配镜处方</view>
+      <view class="h4">根据您的视力检测结果，我们制定了以下配镜方案</view>
     </view>
-  </view>
-  <view class="tr">
-    <view class="td0" style="border: 0px;">
-      <text class="text0">处方由眼科专家根据患者屈光不正性质、年龄、用眼需求等综合因素决定。
-        选择镜片、镜架及按眼科专家指导的配戴方法才能确保矫正效果和视觉健康。
-        数据为当时检查状态的结果，检查后如超过六个月配镜，建议复查。
-      </text>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 4%; background: #d6eef8; font-weight: bold;">{{ report.Function }}</view>
+      <view style="padding: 4%; background: #d6eef8; font-weight: bold;">左眼</view>
+      <view style="padding: 4%; background: #d6eef8; font-weight: bold;">右眼</view>
     </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%;">裸眼视力</view>
+      <view style="padding: 2%;">{{ report.OD.VA }}</view>
+      <view style="padding: 2%;">{{ report.OS.VA }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%; background: #f6f4f4;">球镜(DS)</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.SPH }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.SPH }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%;">柱镜(DC)</view>
+      <view style="padding: 2%;">{{ report.OD.CYL }}</view>
+      <view style="padding: 2%;">{{ report.OS.CYL }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%; background: #f6f4f4;">轴位</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.AX }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.AX }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%;">棱镜(△)</view>
+      <view style="padding: 2%;">{{ report.OD.PR }}</view>
+      <view style="padding: 2%;">{{ report.OS.PR }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 2fr; text-align: center;">
+      <view style="padding: 2%; background: #f6f4f4;">瞳距</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.PD }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%;">下加光</view>
+      <view style="padding: 2%;">{{ report.OD.ADD }}</view>
+      <view style="padding: 2%;">{{ report.OS.ADD }}</view>
+    </view>
+    <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+      <view style="padding: 2%; background: #f6f4f4;">矫正视力</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.BC }}</view>
+      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.BC }}</view>
+    </view>
+    <view style="padding:2%;"></view>
   </view>
-</view>
-<!-- 底部信息 -->
-<view style="text-align: center; margin-top: 5%;">
-  <text style="color: white;">————这是我的底线————</text>
+  <view style="padding:2%;"></view>
+
+
+  <view class="card">
+    <view>
+      <view class="h5">配镜方案</view>
+      <view class="h4">根据您的视力检测结果，我们给您定制了以下配镜方案</view>
+    </view>
+    <view wx:for="{{store}}" wx:for-index="i" wx:for-item="content" wx:key="i" >
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
+        <view style="padding:2%;">{{i}}</view>
+      </view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
+        <view style="padding:2%; background: #f6f4f4;">类别</view>
+        <view style="padding:2%; background: #f6f4f4;">{{content.arg10}}</view>
+      </view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
+        <view style="padding:2%;">品牌</view>
+        <view style="padding:2%;">{{content.arg11}}</view>
+      </view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
+        <view style="padding:2%; background: #f6f4f4;">型号</view>
+        <view style="padding:2%; background: #f6f4f4;">{{content.arg12}}</view>
+      </view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
+        <view style="padding:2%;">参数</view>
+        <view style="padding:2%;">{{content.arg13}}</view>
+      </view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
+        <view style="padding:2%; background: #f6f4f4;">价格</view>
+        <view style="padding:2%; background: #f6f4f4;">{{content.arg14}}</view>
+      </view>
+    </view>
+    <view style="padding:2%;"></view>
+  </view>
+  <view style="padding:2%;"></view>
 </view>

@@ -15,6 +15,7 @@ Page({
         this.setData({
             imgscr: e.link
         })
+        console.log(e.link)
     },
 
     /**

@@ -12,7 +12,12 @@
     </view>
     <view class="btn-area">
       <button style="margin: 30rpx 0" type="primary" formType="submit">提交验证码</button>
-      <button style="margin: 30rpx 0" formType="reset">取消登录</button>
+    </view>
+    <view wx:if="{{waitsms==true}}">
+      <button style="margin: 30rpx 0" type="primary" bind:tap="getVerifyCode">获取验证码</button>
+    </view>
+    <view wx:else>
+      <button style="margin: 30rpx 0" style="background: gainsboro; color: whitesmoke;">请稍后再次获取验证码</button>
     </view>
   </form>
 </view>

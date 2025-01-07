@@ -1,4 +1,4 @@
-// pages/userPage/userPage.js
+const app = getApp()
 Page({
 
   /**
@@ -32,7 +32,6 @@ Page({
     wx.getStorage({
       key: 'ssk',
       success(res) {
-        console.log(res)
         that.setData({
           islogin: true,
           name: res.data.name,
@@ -77,11 +76,34 @@ Page({
 
   },
 
-  userLogin(e) {
-    wx.navigateTo({
-      url: '../userLogin/userLogin',
-    })
-  },
+  getVerifyCode(e) {
+    var code = e.detail.value.input
+    var parttern = /^1[3-9]\d{9}$/;
+    if (parttern.test(code)) {
+        wx.request({
+            url: 'https://maneu.online/sendsms/',
+            method: 'GET',
+            data: {
+                'code': code,
+            },
+            success: (res) => {
+              console.log(res)
+                if (res.data.status == true) {
+                    wx.navigateTo({
+                        url: '../userVerify/userVerify?call=' + code,
+                    })
+                } else {
+                    app.fail_Remind('获取验证码失败，请在次尝试')
+                }
+            },
+            fail: (res) => {
+                app.fail_Remind('网络异常，请在次尝试')
+            }
+        })
+    } else {
+        app.fail_Remind('请输入正确的手机号')
+    }
+},
 
   getOrederList() {
     wx.navigateTo({

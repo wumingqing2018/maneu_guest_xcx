@@ -1,12 +1,17 @@
 /* pages/wxcharts/wxcharts.wxss */
-.canvas {
-  width: 750rpx;
-  height: 400rpx;
+page {
+  height: 100%;
 }
+
 .h5{
   color: black;
   font-weight: bold;
   font-size: 35rpx;
+}
+
+.canvas {
+  width: 750rpx;
+  height: 400rpx;
 }
 
 .navBox {
@@ -49,8 +54,11 @@
 }
 
 .card {
-  background-color: #ffffff; border-radius:20px;
+  background-color: #ffffff; 
+  border-radius:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .card_banner {
-  padding-left: 20px; padding-top: 20px;
+  padding-left: 20px; 
 }

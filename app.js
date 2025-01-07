@@ -48,8 +48,8 @@ App({
       showCancel: false,
       complete: (res) => {
         if (res.confirm) {
-          wx.redirectTo({
-            url: '../userLogin/userLogin'
+          wx.switchTab({
+            url: '../userPage/userPage',
           });
         }
       }
