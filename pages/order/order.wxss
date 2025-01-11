@@ -64,6 +64,7 @@ page{
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .card_banner {
-  padding-left: 20px;
+  padding: 2%;
 }

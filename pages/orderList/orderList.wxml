@@ -18,14 +18,14 @@
           </view>
         </view>
         <view style="display: grid; grid-template-columns: 1fr 1fr 1fr 2fr;">
-          <view style="margin: 2%; padding-left: 10px;">姓名：</view>
-          <view style="margin: 2%;">{{order.name}}</view>
-          <view style="margin: 2%;">电话：</view>
-          <view style="margin: 2%;">{{order.phone}}</view>
+          <view style="margin: 5px; padding-left: 10px;">姓名：</view>
+          <view style="margin: 5px;">{{order.name}}</view>
+          <view style="margin: 5px;">电话：</view>
+          <view style="margin: 5px;">{{order.phone}}</view>
         </view>
         <view style="display: grid; grid-template-columns: 1fr 4fr;">
-          <view style="margin: 2%; padding-left: 10px;">备注：</view>
-          <view style="margin: 2%;">{{order.remark}}</view>
+          <view style="margin: 5px; padding-left: 10px;">备注：</view>
+          <view style="margin: 5px;">{{order.remark}}</view>
         </view>
         <view style="display: grid; grid-template-columns: 1fr;">
           <view style="border-bottom-left-radius:20px; border-bottom-right-radius:20px; padding-left: 20px; background: #91c9e1; text-align: right; padding: 5px; padding-right: 15px;">

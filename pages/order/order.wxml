@@ -11,36 +11,36 @@
       <view class="h5">基础信息</view>
       <view class="h4">客户信息</view>
     </view>
-    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
-      <view style="padding: 2%;">姓名</view>
-      <view style="padding: 2%;">{{ nickname }}</view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+      <view style="padding: 5px; background: #f6f4f4;">客户姓名</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ name }}</view>
     </view>
-    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
-      <view style="padding: 2%; background: #f6f4f4;">电话</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ phone }}</view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+      <view style="padding: 5px; background: #ffffff;">联系电话</view>
+      <view style="padding: 5px; background: #ffffff;">{{ phone }}</view>
     </view>
 
     <view>
       <view class="h4">验光机构</view>
     </view>
-    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
-      <view style="padding: 2%; background: #f6f4f4;">姓名</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ admin.name }}</view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+      <view style="padding: 5px; background: #f6f4f4;">店铺名称</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ admin.nickname }}</view>
     </view>
-    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
-      <view style="padding: 2%;">电话</view>
-      <view style="padding: 2%;">{{ admin.phone }}</view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+      <view style="padding: 5px; background: #ffffff;">联系电话</view>
+      <view style="padding: 5px; background: #ffffff;">{{ admin.phone }}</view>
     </view>
-    <view style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
-      <view style="padding: 2%; background: #f6f4f4;">地址</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ admin.location }}</view>
+    <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+      <view style="padding: 5px; background: #f6f4f4;">营业地址</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ admin.location }}</view>
     </view>
     
     <view>
       <view class="h4">验光师建议</view>
     </view>
-    <view style="text-align: center; display: grid; grid-template-columns: 1fr;">
-      <view style="padding: 2%; background: #f6f4f4;">无</view>
+    <view style="display: grid; grid-template-columns: 1fr;">
+      <view style="padding: 5px; background: #ffffff;">{{remark}}</view>
     </view>
     <view style="padding:2%;"></view>
   </view>
@@ -53,48 +53,48 @@
       <view class="h4">根据您的视力检测结果，我们制定了以下配镜方案</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 4%; background: #d6eef8; font-weight: bold;">{{ report.Function }}</view>
+      <view style="padding: 4%; background: #d6eef8; font-weight: bold;">{{ report.PLAN }}</view>
       <view style="padding: 4%; background: #d6eef8; font-weight: bold;">左眼</view>
       <view style="padding: 4%; background: #d6eef8; font-weight: bold;">右眼</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%;">裸眼视力</view>
-      <view style="padding: 2%;">{{ report.OD.VA }}</view>
-      <view style="padding: 2%;">{{ report.OS.VA }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">裸眼视力</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OD.VA }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OS.VA }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%; background: #f6f4f4;">球镜(DS)</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.SPH }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.SPH }}</view>
+      <view style="padding: 5px; background: #ffffff;">球镜(DS)</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.OD.SPH }}</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.OS.SPH }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%;">柱镜(DC)</view>
-      <view style="padding: 2%;">{{ report.OD.CYL }}</view>
-      <view style="padding: 2%;">{{ report.OS.CYL }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">柱镜(DC)</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OD.CYL }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OS.CYL }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%; background: #f6f4f4;">轴位</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.AX }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.AX }}</view>
+      <view style="padding: 5px; background: #ffffff;">轴位</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.OD.AX }}</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.OS.AX }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%;">棱镜(△)</view>
-      <view style="padding: 2%;">{{ report.OD.PR }}</view>
-      <view style="padding: 2%;">{{ report.OS.PR }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">棱镜(△)</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OD.PR }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OS.PR }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 2fr; text-align: center;">
-      <view style="padding: 2%; background: #f6f4f4;">瞳距</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.PD }}</view>
+      <view style="padding: 5px; background: #ffffff;">瞳距</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.PD }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%;">下加光</view>
-      <view style="padding: 2%;">{{ report.OD.ADD }}</view>
-      <view style="padding: 2%;">{{ report.OS.ADD }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">下加光</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OD.ADD }}</view>
+      <view style="padding: 5px; background: #f6f4f4;">{{ report.OS.ADD }}</view>
     </view>
     <view style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-      <view style="padding: 2%; background: #f6f4f4;">矫正视力</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OD.BC }}</view>
-      <view style="padding: 2%; background: #f6f4f4;">{{ report.OS.BC }}</view>
+      <view style="padding: 5px; background: #ffffff;">矫正视力</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.OD.BC }}</view>
+      <view style="padding: 5px; background: #ffffff;">{{ report.OS.BC }}</view>
     </view>
     <view style="padding:2%;"></view>
   </view>
@@ -107,28 +107,29 @@
       <view class="h4">根据您的视力检测结果，我们给您定制了以下配镜方案</view>
     </view>
     <view wx:for="{{store}}" wx:for-index="i" wx:for-item="content" wx:key="i" >
-      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
-        <view style="padding:2%;">{{i}}</view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+        <view style="padding: 5px; background: #f6f4f4;">{{i}}</view>
+        <view style="padding: 5px; background: #f6f4f4;"></view>
       </view>
-      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
-        <view style="padding:2%; background: #f6f4f4;">类别</view>
-        <view style="padding:2%; background: #f6f4f4;">{{content.arg10}}</view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+        <view style="padding: 5px; background: #ffffff;">类别</view>
+        <view style="padding: 5px; background: #ffffff;">{{content.arg10}}</view>
       </view>
-      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
-        <view style="padding:2%;">品牌</view>
-        <view style="padding:2%;">{{content.arg11}}</view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+        <view style="padding: 5px; background: #ffffff;">品牌</view>
+        <view style="padding: 5px; background: #ffffff;">{{content.arg11}}</view>
       </view>
-      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
-        <view style="padding:2%; background: #f6f4f4;">型号</view>
-        <view style="padding:2%; background: #f6f4f4;">{{content.arg12}}</view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+        <view style="padding: 5px; background: #ffffff;">型号</view>
+        <view style="padding: 5px; background: #ffffff;">{{content.arg12}}</view>
       </view>
-      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
-        <view style="padding:2%;">参数</view>
-        <view style="padding:2%;">{{content.arg13}}</view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+        <view style="padding: 5px; background: #ffffff;">参数</view>
+        <view style="padding: 5px; background: #ffffff;">{{content.arg13}}</view>
       </view>
-      <view style="text-align: center; display: grid; grid-template-columns: 1fr 4fr;">
-        <view style="padding:2%; background: #f6f4f4;">价格</view>
-        <view style="padding:2%; background: #f6f4f4;">{{content.arg14}}</view>
+      <view style="text-align: center; display: grid; grid-template-columns: 1fr 2fr;">
+        <view style="padding: 5px; background: #ffffff;">价格</view>
+        <view style="padding: 5px; background: #ffffff;">{{content.arg14}}</view>
       </view>
     </view>
     <view style="padding:2%;"></view>

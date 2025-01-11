@@ -11,6 +11,7 @@ Page({
     admin: {},
     guest: {},
     report: {},
+    admin_id: '',
     tabsId: 0, //默认选型为装备
     tabList: [{
         title: "饮食",
@@ -40,25 +41,7 @@ Page({
     //计算屏幕宽度比列
     windowW = this.data.imageWidth / 375;
     console.log(windowW);
-
-    wx.request({
-      url: 'https://maneu.online/get_detail/',
-      method: 'GET',
-      data: {
-        'text': '100003',
-        'code': options.code
-      },
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          name: res.data.name,
-          time: res.data.time,
-          phone: res.data.phone,
-          report: res.data.content
-        })
-        this.get_admin_content(res.data.admin_id)        
-      }
-    })
+    this.get_report_content(options.code)
   },
 
   /**
@@ -109,6 +92,7 @@ Page({
   onShareAppMessage() {
 
   },
+
   slideOn(e) {
     // 拿到当前索引并动态改变
     this.setData({
@@ -123,6 +107,29 @@ Page({
       tabsId: e.currentTarget.dataset.idx
     })
   },
+
+  get_report_content(code){
+    wx.request({
+      url: 'https://maneu.online/get_detail/',
+      method: 'GET',
+      data: {
+        'text': '100003',
+        'code': code,
+      },
+      success: (res) => {
+        this.setData({
+          name: res.data.content.name,
+          time: res.data.content.time,
+          phone: res.data.content.phone,
+          admin_id: res.data.content.admin_id,
+          report: res.data.content.content
+        })
+        console.log(res.data.content.content.PLAN)
+        this.get_admin_content(res.data.content.admin_id)        
+      }
+    })
+  },
+
   get_admin_content(code){
     wx.request({
       url: 'https://maneu.online/get_detail/',
@@ -132,7 +139,6 @@ Page({
         'code': code,
       },
       success: (res) => {
-        console.log(res)
         this.setData({
           admin: res.data.content
         })
