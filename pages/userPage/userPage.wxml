@@ -1,38 +1,38 @@
 <!--pages/userPage/userPage.wxml-->
 <view wx:if="{{islogin == true}}">
-  <image src="/image/banner.jpg" class="m_show" mode="widthFix"></image>
-  <view class="s_view banner-text">
-    <button>登录账号：{{call}}</button>
-  </view>
-  <view class="s_view banner-text">
-    <button bind:tap="getOrederList">购买记录</button>
-  </view>
-  <view class="s_view banner-text">
-    <button bind:tap="getReportList">验光报告</button>
-  </view>
-  <view class="s_view banner-text">
-    <button bind:tap="getMaintainList">售后记录</button>
-  </view>
-  <view class="s_view banner-text">
-    <button bind:tap="userLogout">用户退出</button>
-  </view>
+    <image class="m_show" mode="widthFix" src="/image/banner.jpg"></image>
+    <view class="s_view banner-text">
+        <button>登录账号：{{call}}</button>
+    </view>
+    <view class="s_view banner-text">
+        <button bind:tap="getOrederList">购买记录</button>
+    </view>
+    <view class="s_view banner-text">
+        <button bind:tap="getReportList">验光报告</button>
+    </view>
+    <view class="s_view banner-text">
+        <button bind:tap="getMaintainList">售后记录</button>
+    </view>
+    <view class="s_view banner-text">
+        <button bind:tap="userLogout">用户退出</button>
+    </view>
 </view>
 <view wx:else="{{islogin == false}}">
-  <view class="container">
-    <form catchsubmit="getVerifyCode" catchreset="formReset">
-      <image src="/image/banner.jpg" mode="widthFix"></image>
-      <view class="page-section">
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__bd" style="margin: 50rpx 0">
-              <input class="weui-input" name="input" placeholder="请输入手机号" />
+    <view class="container">
+        <form catchreset="formReset" catchsubmit="getVerifyCode">
+            <image mode="widthFix" src="/image/banner.jpg"></image>
+            <view class="page-section">
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__bd" style="margin: 50rpx 0">
+                            <input class="weui-input" name="input" placeholder="请输入手机号"/>
+                        </view>
+                    </view>
+                </view>
             </view>
-          </view>
-        </view>
-      </view>
-      <view class="btn-area">
-        <button style="margin: 30rpx 0" type="primary" formType="submit">获取验证码</button>
-      </view>
-    </form>
-  </view>
+            <view class="btn-area">
+                <button formType="submit" style="margin: 30rpx 0" type="primary">获取验证码</button>
+            </view>
+        </form>
+    </view>
 </view>

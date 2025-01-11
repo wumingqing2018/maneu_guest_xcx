@@ -1,11 +1,11 @@
 <!--pages/indexDetail/indexDetail.wxml-->
 <view wx:if="{{ imgscr ==='https://maneu.online/static/img/gif2.jpg'}}">
-  <image src="https://maneu.online/static/img/3.gif" class="m_show" mode="widthFix"></image>
-  <image src="{{imgscr}}" class="m_show" mode="widthFix"></image>
+    <image class="m_show" mode="widthFix" src="https://maneu.online/static/img/3.gif"></image>
+    <image class="m_show" mode="widthFix" src="{{imgscr}}"></image>
 </view>
 <view wx:else="">
-  <image src="{{imgscr}}" class="m_show" mode="widthFix"></image>
+    <image class="m_show" mode="widthFix" src="{{imgscr}}"></image>
 </view>
 <view class="s_view">
-  <text style="color: white;">————这是我的底线————</text>
+    <text style="color: white;">————这是我的底线————</text>
 </view>
